@@ -1,0 +1,6 @@
+[package]
+name = "rusty-time"
+version = "0.1.0"
+authors = ["Ron Rider <rideron89@gmail.com>"]
+
+[dependencies]
