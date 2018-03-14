@@ -21,3 +21,11 @@ $ source $HOME/.cargo/env                # enable Rust without having to log bac
 You will need to download `rustup-init.exe` from [https://rustup.rs/](https://rustup.rs/).
 
 More detailed instructions can be found at the official docs: [https://doc.rust-lang.org/book/second-edition/ch01-01-installation.html](https://doc.rust-lang.org/book/second-edition/ch01-01-installation.html).
+
+---
+
+Once you have Rust installed, you can build and run the application with [Cargo](https://github.com/rust-lang/cargo
+
+```bash
+$ cargo run
+```
