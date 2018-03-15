@@ -25,7 +25,7 @@ More detailed instructions can be found at the official docs: [https://doc.rust-
 
 ---
 
-Once you have Rust installed, you can build and run the application with [Cargo](https://github.com/rust-lang/cargo
+Once you have Rust installed, you can build and run the application with [Cargo](https://github.com/rust-lang/cargo)
 
 ```bash
 $ cargo run
