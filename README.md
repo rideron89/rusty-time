@@ -4,6 +4,14 @@ Rusty-time is a command-line tool that helps you keep track of your daily timesh
 
 ![rusty-time](https://raw.githubusercontent.com/rideron89/rusty-time/master/screenshot.png)
 
+## Usage
+
+Starting the program is as easy as running the release script:
+
+```bash
+$ ./bin/rusty-time
+```
+
 ## Build
 
 You will need to make sure you have Rust installed if you plan on building the source code.
