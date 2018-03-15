@@ -9,7 +9,7 @@ enum Command {
 }
 
 struct Entry {
-    job_number: String,
+    job: String,
     time_logged: f32,
 }
 
@@ -20,7 +20,7 @@ fn print_welcome_message() {
     println!("*------------------------------------*");
     println!("|             Rusty Time             |");
     println!("|                                    |");
-    println!("| Format: [job_number]:[hours_spent] |");
+    println!("| Format: [job]:[hours_spent]        |");
     println!("|                                    |");
     println!("| Commands:                          |");
     println!("|     end: Quit                      |");
@@ -40,7 +40,7 @@ fn show_status(entries: HashMap<String, f32>, total_time_logged: f32) {
     println!("*------------------------------------*");
     
     for (key, value) in &entries {
-        println!("Job {}: {} hours", key, value);
+        println!("{}: {} hours", key, value);
     }
 }
 
@@ -51,9 +51,9 @@ fn validate_input(input: String) -> Result<Entry, &'static str> {
         let entry_parts: Vec<&str> = input.split(":").collect();
 
         if entry_parts.len() < 2 {
-            Err("Invalid time entry. Please use [job_number]:[time_logged]. Skipping.")
+            Err("Invalid time entry. Please use [job]:[time_logged]. Skipping.")
         } else {
-            let job_number: String = String::from(entry_parts[0]);
+            let job: String = String::from(entry_parts[0]);
             let time_logged: f32 = match entry_parts[1].trim().parse() {
                 Ok(num) => num,
                 Err(_) => 0.0,
@@ -63,7 +63,7 @@ fn validate_input(input: String) -> Result<Entry, &'static str> {
                 Err("Could not parse time part. Skipping.")
             } else {
                 Ok(Entry {
-                    job_number: job_number,
+                    job: job,
                     time_logged: time_logged,
                 })
             }
@@ -127,7 +127,7 @@ fn main() {
             }
         };
 
-        let existing_entry = entries.entry(entry.job_number).or_insert(0.0);
+        let existing_entry = entries.entry(entry.job).or_insert(0.0);
         *existing_entry += entry.time_logged;
 
         total_time_logged += entry.time_logged;
