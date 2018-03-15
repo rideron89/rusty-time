@@ -1,7 +1,8 @@
 # rusty-time
 
-
 Rusty-time is a command-line tool that helps you keep track of your daily timesheets. Simply log your time as you work, and get a condensed report when you are done!
+
+![rusty-time](https://raw.githubusercontent.com/rideron89/rusty-time/screenshot.png)
 
 ## Build
 
