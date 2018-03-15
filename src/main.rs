@@ -60,7 +60,7 @@ fn validate_input(input: String) -> Result<Entry, &'static str> {
             };
 
             if time_logged == 0.0 {
-                Err("Could not parse time part. Skipping.")
+                Err("Empty or invalid time logged. Skipping.")
             } else {
                 Ok(Entry {
                     job: job,
